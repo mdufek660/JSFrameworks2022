@@ -7,13 +7,23 @@ In Visual Studio code, press `command+shift+v` (Mac) or `ctrl+shift+v` (Windows)
 Using your command line, you will need to navigate to the this folder, install all dependencies, and start the app.
 
 ```bash
-cd exercises/01-arrays/
+cd exercises/02-arrays/
 code . # if you would like to open this in a separate VSCode window
-yarn install
-yarn start
+npm install
+npm start
 ```
 
-If, at any time, you need to stop the app, press `ctrl+c`.
+To stop the application, press `ctrl+c`.
+
+To run the tests:
+
+```shell
+npm run test
+```
+
+If you do not see any test results, press `a` to run all tests. The tests will rerun whenever you make a change.
+
+To stop the tests, press `ctrl+c`.
 
 ## Reason for the challenge
 

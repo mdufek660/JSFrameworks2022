@@ -10,7 +10,7 @@ test("render the person components", () => {
   render(<Person />);
   const name = screen.getAllByText(/Peter Piper/i);
   expect(name.length).toBe(1);
-  const p = screen.getByText(/42/i);
+  const p = screen.getByText(/82/i);
   expect(p).toBeInTheDocument();
   const p1 = screen.getByText(/Peter Piper/i);
   expect(p1).toBeInTheDocument();

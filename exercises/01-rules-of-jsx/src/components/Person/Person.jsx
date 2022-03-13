@@ -13,13 +13,13 @@ const Person = () => {
 
   return (
     <div>
-      <h1>Age to Birth Year</h1>
+      <h1>Featured Person</h1>
       {/* Using JSX, plugin name below from the person object */}
-      <div>Name ____</div>
+      <div>Name: _____</div>
       {/* Using JSX, plugin occupation below from the person object */}
-      <div>Occupation ____</div>
+      <div>Occupation: _____</div>
       {/* Using JSX, plugin the birth year using a function that converts age to birth year */}
-      <div>Age ____</div>
+      <div>Age: _____</div>
     </div>
   );
 };

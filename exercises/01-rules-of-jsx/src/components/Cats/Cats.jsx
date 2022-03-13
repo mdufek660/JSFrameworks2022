@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./cats.module.scss";
 
 /**
  * Fix the errors inside of this React component.
@@ -12,16 +11,16 @@ const Cats = () => {
   ];
 
   return (
-    <div className={styles.container}>
+    <>
       <h1>Because everyday is a Caturday.</h1>
-      <ul className={styles.catsContainer}>
+      <ul className="list-unstyled">
         {catLinkImages.map((cat) => (
-          <li key={cat}>
-            <img src={cat} alt={"pictures of cats"} className={styles.image} >
+          <li key={cat} className="d-inline">
+            <img src={cat} alt={"pictures of cats"} width="200" className="img-fluid img-thumbnail">
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 

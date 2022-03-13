@@ -41,6 +41,8 @@ _What is an acceptance criteria?_ In software development, the acceptance criter
 
 Instead of errors, you should see a list of cats and "React is the most popular Framework of 2022" appear on the screen.
 
+![What you should see when the errors are fixed](jsx-demo.png)
+
 ## Assignment 2
 
 Follow the instructions inside of _src/components/Person/Person.jsx_.

@@ -1,8 +1,8 @@
 import React from "react";
 
-//create function component named SingleParentElement
-//The component should render a parent element with a child element
-
+/**
+ * Fix the errors inside of this React component.
+ */
 const SingleParentElement = () => {
   return (
       <p>React is the most popular Framework of 2022.</p>

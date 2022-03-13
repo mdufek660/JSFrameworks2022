@@ -1,11 +1,9 @@
 import React from "react";
 import styles from "./cats.module.scss";
 
-//create function component named Cats
-//the component should render a list of cat images
-//the list should be generated from an array of cat images
-//https://slides.com/d/EJbs5og/live#/6/0/1
-
+/**
+ * Fix the errors inside of this React component.
+ */
 const Cats = () => {
   const catLinkImages = [
     "https://cdn2.thecatapi.com/images/4ub.gif",
@@ -19,7 +17,6 @@ const Cats = () => {
       <ul className={styles.catsContainer}>
         {catLinkImages.map((cat) => (
           <li key={cat}>
-            {/* This line needs to be changed */}
             <img src={cat} alt={"pictures of cats"} className={styles.image} >
           </li>
         ))}

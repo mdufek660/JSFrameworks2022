@@ -1,3 +1,5 @@
+import Greeter from './Greeter.js'
+
 /**
  *  Return the highest number in the array
  * @param  { array }
@@ -8,7 +10,16 @@
  *
  **/
 
-const highestNumber = (array) => {};
+const highestNumber = (array) => {
+  let highest = array[0];
+  for(let i=0; i<array.length; i++){
+    if(array[i]>highest){
+      highest=array[i]
+    }
+  }
+  console.log(highest);
+};
+highestNumber([1, 10, 2, 3, 4])
 
 /**
  * The next exercise uses ES6 modules, but we had to cut ES6 modules from some JavaScript Fundamentals classes.
@@ -45,7 +56,7 @@ function Greeter() {
  * combineArray(['Japan','China','India'], ['USA','UK']) // ['Japan','China','India','USA','UK']
  **/
 
-const combineArray = (array1, array2) => {};
+const combineArray = (array1, array2) => {return [...array1, ...array2]};
 
 /**
  * Combine two objects into one
@@ -54,7 +65,7 @@ const combineArray = (array1, array2) => {};
  * @return {object} obj1 and obj2 combined
  */
 
-const combineObject = (obj1, obj2) => {};
+const combineObject = (obj1, obj2) => {return {...obj1, ...obj2}};
 
 /**
  * Please use the higher order function map to solve this problem.
@@ -63,7 +74,7 @@ const combineObject = (obj1, obj2) => {};
  * @returns {array} new array, with each value doubled e.g. [2, 5, 10]
  */
 
-const doubleValues = (arr) => {};
+const doubleValues = (arr) => {return arr.map(function(num){return num*2})};
 
 /**
  * * Please use the higher order function filter to solve this problem.
@@ -74,8 +85,7 @@ const doubleValues = (arr) => {};
  *   onlyEvenValues([1,2,3]) // [2]
  *   onlyEvenValues([5,1,2,3,10]) // [2,10]
  */
-const onlyEvenValues = (arr) => {};
-
+const onlyEvenValues = (arr) => {return arr.filter((entry)=> entry%2==0)};
 /**
  * Create a function called removeVowels which accepts a string and returns a new string with all of the vowels (both uppercase and lowercase) removed.
  * Every character in the new string should be lowercase.
@@ -85,6 +95,20 @@ const onlyEvenValues = (arr) => {};
  * removeVowels('ZZZZZZ') // ('zzzzzz')
  */
 
+ function removeVowels(input){
+  input=input.toLowerCase();
+  let removeLetters=["a", "e", "i", "o", "u"];
+  let output=""
+  for(let i=0; i<input.length; i++ ){
+    if(!removeLetters.includes(input[i])){
+      output+=(input[i])
+    }
+  }
+  return output
+ }
+console.log(removeVowels('Elie')) // ('l')
+console.log(removeVowels('TIM')) // ('tm')
+console.log(removeVowels('ZZZZZZ')) // ('zzzzzz')
 /**
  * Remove all vowels from within a string and lower case each letter
  * @param {string} str
@@ -94,7 +118,7 @@ const onlyEvenValues = (arr) => {};
  *  removeVowels('TIM') // ('tm')
  *  removeVowels('ZZZZZZ') // ('zzzzzz')
  */
-const removeVowels = (str) => {};
+// const removeVowels = (str) => {};
 
 /**
  * Solve this problem using the ternary operator.
@@ -114,7 +138,7 @@ const getIsHungryText = () => {
   //   isHungry = "Keep coding!";
   // }
 
-  return isHungry;
+  return (isStomachEmpty ? "Go eat something." : "Keep coding!");
 };
 
 /**
@@ -131,8 +155,8 @@ const getTempOfTomorrow = () => {
   };
 
   // Start of what you should change
-  const today = AVG_TEMPERATURES.today;
-  const tomorrow = AVG_TEMPERATURES.tomorrow;
+  const {today} = AVG_TEMPERATURES;
+  const {tomorrow} = AVG_TEMPERATURES;
   // End of what you should change
   return `Today's temperature is ${today}.\nTomorrow's temperature is ${tomorrow}`;
 };
@@ -148,7 +172,12 @@ const getTempOfTomorrow = () => {
  *  addItems([1,5,6]) // 12
  *  addItems([1,-2,-3]) // -4
  */
-const addItems = (arr) => {};
+const addItems = (arr) => {
+  let sum = 0;
+  arr.forEach(entry => sum+=entry)
+  return sum;
+};
+
 
 /**
  * Remove duplicate values from an array.
@@ -163,9 +192,17 @@ const addItems = (arr) => {};
 
 const removeDuplicates = (array) => {
   // Return the an array of unique values
-  return;
-};
+  let returnArray=[];
 
+  for(let i=0; i<array.length; i++){
+    if(!returnArray.includes(array[i])){
+      returnArray.push(array[i])
+    }
+  }
+
+  return returnArray;
+};
+console.log(removeDuplicates([1,1,2,2,3,3]))
 /**
  * Ignore this. It is for the tests.
  */

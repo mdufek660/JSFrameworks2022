@@ -60,6 +60,7 @@ logs
 
 node_modules
 bower_components
+random
 
 *.sublime*
 

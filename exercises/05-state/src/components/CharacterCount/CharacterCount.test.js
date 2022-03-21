@@ -12,14 +12,14 @@ import CharacterCount from "./CharacterCount";
  */
 test("should render the character count", () => {
   //render the component
-  render(<CharacterCount />);
+  const { container } = render(<CharacterCount />);
 
   //find the textarea and type in some text
-  const textarea = screen.getByTestId("messageTextArea");
+  const textarea = container.querySelector("textarea");
   fireEvent.change(textarea, {
     target: { value: "hello" },
   });
 
   //check if the text is rendered
-  expect(screen.getByText("5 characters"));
+  expect(screen.getByText(/5/));
 });

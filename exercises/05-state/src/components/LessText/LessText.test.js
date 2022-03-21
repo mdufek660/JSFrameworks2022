@@ -13,7 +13,7 @@ test("should render all text", () => {
   // import debug
 
   //check if the text is rendered
-  expect(screen.getByText("h...")).toBeInTheDocument();
+  expect(screen.getByText(/h/)).toBeInTheDocument();
   //check if the text is rendered
 });
 

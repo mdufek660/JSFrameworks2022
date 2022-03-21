@@ -46,7 +46,7 @@ As a user, I would like to see the number of keystrokes a user types displayed o
 
 ### Instructions:
 
-1. Create a component named "CharacterCount". (It will not require any props.)
+1. Create a component named "CharacterCount". (It will not require any props.). Please give it an data-testid="messageTextArea"
 2. Import and display your "CharacterCount" component inside of _exercises/05-state/src/App.jsx_.
 3. It will render a `<textarea>` textbox that will capture user input.
 4. It will then render count of the number of characters in the textbox on the screen.

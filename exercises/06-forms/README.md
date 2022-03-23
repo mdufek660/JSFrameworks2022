@@ -13,7 +13,17 @@ npm install
 npm start
 ```
 
-If, at any time, you need to stop the app, press `ctrl+c`.
+To stop the application, press `ctrl+c`.
+
+To run the tests:
+
+```shell
+npm run test
+```
+
+If you do not see any test results, press `a` to run all tests. The tests will rerun whenever you make a change.
+
+To stop the tests, press `ctrl+c`.
 
 ## Instructions
 
@@ -40,3 +50,11 @@ After the user has submitted the form, each field entry that the user has entere
 ```html
 <li>New York</li>
 ```
+
+## Acceptance Criteria
+
+You must complete this assignment with the `useState()` hook(s).
+
+All inputs must be controlled inputs and you must have a controlled form.
+
+Everything that the user entered into the form should be displayed on the page after the user submits the form.

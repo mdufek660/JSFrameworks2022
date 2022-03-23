@@ -17,6 +17,18 @@ npm install
 npm start
 ```
 
+To stop the application, press `ctrl+c`.
+
+To run the tests:
+
+```shell
+npm run test
+```
+
+If you do not see any test results, press `a` to run all tests. The tests will rerun whenever you make a change.
+
+To stop the tests, press `ctrl+c`.
+
 ## User Story
 
 As a user, I would like to have an app that allows me to record my food purchases. The app should allow me to add grocery items to a list, update grocery items, and remove items from the list.

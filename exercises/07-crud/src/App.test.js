@@ -4,7 +4,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 
 test("should render a grocery list", () => {
   render(<App />);
-  const inputNode = screen.getByPlaceholderText("Cost of grocery Item...");
+  const inputNode = screen.getByPlaceholderText("Cost of grocery item...");
   //change the value of the input using fireEvent
   fireEvent.change(inputNode, { target: { value: "1" } });
   const input = screen.getByPlaceholderText("Name of grocery item...");
@@ -20,7 +20,7 @@ test("should render a grocery list", () => {
 
 test("clear button resets the form", () => {
   render(<App />);
-  const inputNode = screen.getByPlaceholderText("Cost of grocery Item...");
+  const inputNode = screen.getByPlaceholderText("Cost of grocery item...");
   //change the value of the input using fireEvent
   fireEvent.change(inputNode, { target: { value: "1" } });
   const input = screen.getByPlaceholderText("Name of grocery item...");

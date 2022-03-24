@@ -2,7 +2,9 @@ import "./App.css";
 import LessText from './components/LessText'
 import CharacterCount from './components/CharacterCount'
 // Import LessText here
+import LessText from "./components/LessText/LessText";
 // Import CharacterCount here
+import CharacterCount from "./components/CharacterCount/CharacterCount";
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
          aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem 
          eum fugiat quo voluptas nulla pariatur?' />
         {/* Add LessText with props here */}
+        <LessText text={"hello"} maxLength={1} />
       </div>
       <div className="bg-secondary text-white pt-4 pb-4 mb-4">
         <div className="container">

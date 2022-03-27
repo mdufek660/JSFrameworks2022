@@ -22,6 +22,18 @@ npm install
 npm start
 ```
 
+To stop the application, press `ctrl+c`.
+
+To run the tests:
+
+```shell
+npm run test
+```
+
+If you do not see any test results, press `a` to run all tests. The tests will rerun whenever you make a change.
+
+To stop the tests, press `ctrl+c`.
+
 ## Challenge 1 - Temperature
 
 ### User Stories

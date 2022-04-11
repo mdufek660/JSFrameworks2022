@@ -25,6 +25,7 @@ function AddressForm(props) {
    * - Add an event handler to handle form submission
    */
   const handleChange = (e) => {
+    console.log(e)
     props.setFormValues({
       ...props.formValues,
       [e.target.name]: e.target.value,

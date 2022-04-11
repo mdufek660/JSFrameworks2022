@@ -1,16 +1,26 @@
 // Import useEffect here
+import {useEffect, useState}  from "react" 
 import "./App.css";
 import ronSwansonImage from "./assests/ronswanson.png";
 // import Axios (or use Fetch)
+import axios from 'axios';
 
 function App() {
   /**
    * Set up your state
    */
 
+   const [quote, setQuote] = useState("loading...");
+   const [error, setError] = useState(false)
+
+
   /**
    * Make an AJAX call with the useEffect hook
    */
+
+   useEffect(()=>{
+    axios("https://ron-swanson-quotes.herokuapp.com/v2/quotes").then(response=>{setQuote(response.data[0])}).catch((err) => {setError(true); setQuote("error");})
+   }, [])
 
   return (
     <body class="bg-warning text-center">
@@ -21,8 +31,9 @@ function App() {
         <blockquote
           id="quote"
           class="blockquote bg-dark text-white border-0 mb-4"
+          
         >
-          {/* Complete me */}
+         {quote}
         </blockquote>
       </div>
     </body>

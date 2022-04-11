@@ -6,6 +6,7 @@ import TemperatureScale from "../TemperatureScale/TemperatureScale";
 
 const CURRENT_TEMPERATURE_CELSIUS = 3;
 
+
 function Temperature() {
   /**
    * Scale (Celsius or Fahrenheit)
@@ -14,6 +15,9 @@ function Temperature() {
    * 2. "F" for Fahrenheit
    */
   const [scale, setScale] = useState("F");
+  const changeScale = newValue =>{
+    setScale(newValue)
+  }
   /**
    * Converts CURRENT_TEMPERATURE_CELSIUS to the selected temperature scale (Celsius or Fahrenheit)
    * @type number
@@ -32,34 +36,10 @@ function Temperature() {
           <div className="h1">
             {temperature} &deg; {scale}
           </div>
-          {/* END */}
 
-          {/* Pass props to <TemperatureDisplay /> */}
-          <TemperatureDisplay />
+          <TemperatureDisplay temperature={temperature} scale={scale}/>
         </div>
-        {/* START Move this into <TemperatureScale />. (You will see errors and have to fix them when you do this). */}
-        <div
-          className="btn-group"
-          role="group"
-          aria-label="Convert temperature"
-        >
-          <button
-            className="btn btn-outline-primary"
-            onClick={() => setScale("F")}
-          >
-            Fahrenheit
-          </button>
-          <button
-            className="btn btn-outline-primary"
-            onClick={() => setScale("C")}
-          >
-            Celsius
-          </button>
-        </div>
-        {/* END */}
-
-        {/* Pass props to <TemperatureScale /> */}
-        <TemperatureScale />
+        <TemperatureScale props={scale} setScale={changeScale}/>
       </div>
     </div>
   );

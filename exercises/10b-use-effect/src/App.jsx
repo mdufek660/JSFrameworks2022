@@ -1,7 +1,7 @@
 // Import useEffect here
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
-// import Axios (or use Fetch)
+import axios from 'axios';
 
 function App() {
   /**
@@ -14,20 +14,36 @@ function App() {
    * ]
    */
   const [dogImages, setDogImages] = useState([]);
+  const [numDisplay, setNumDisplay] = useState(1);
+  const [error, setError]=useState(false)
+
+  function changeHandler(e){
+    setNumDisplay(e.target.value)
+    getNewImages();
+  }
+
+  function getNewImages(){
+    let newAddress = "https://dog.ceo/api/breeds/image/random/"+numDisplay
+    console.log(newAddress)
+    axios(newAddress).then(response=>{console.log(response);setDogImages(response.data.message);}).catch((err) => {setError(true);})
+  }
 
   /**
    * You may need to set something else in state
    */
 
   /**
-   * Make an AJAX call with the useEffect hook
+   * Make an AJAX call with the useEffect hook https://dog.ceo/api/breeds/image/random/3
    */
+   useEffect(()=>{
+    axios("https://dog.ceo/api/breeds/image/random/1").then(response=>{setDogImages(response.data.message);}).catch((err) => {setError(true);})
+   }, [])
 
   return (
     <div className="App">
       <h1>Dogs</h1>
       {/* Make me a controlled input */}
-      <select>
+      <select onChange={changeHandler}>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -39,6 +55,7 @@ function App() {
         <option value="9">9</option>
         <option value="10">10</option>
       </select>
+      <button onClick={getNewImages}>Submit</button>
       <div className="container">
         {dogImages.map((dogImage, idx) => {
           return <img key={`dog-${idx}`} height="200" src={dogImage} />;
